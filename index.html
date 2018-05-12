@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let rock = 'Rock', paper = 'Paper', scissors = 'Scissors';
+		let win = 'You Win!', lose = 'You Lose!'
+		let playerScore = 0, computerScore = 0, round = 0;
+
+		function getRandomInt(num) {
+			return Math.floor(Math.random() * num);
+		}
+
+		function computerPlay() {
+			return getRandomInt(3);
+		}
+
+		function playRPS(playerSelection, computerSelection ) {
+			let results = "";
+			switch(playerSelection) {
+				case 0:
+					switch(computerSelection) {
+						case 0:
+							results = 'Draw!';
+							break;
+						case 1:
+							computerScore++;
+							results = lose + ' ' + paper + ' covers ' + rock;
+							break;
+						case 2:
+							playerScore++;
+							results = win + ' ' + rock + ' breaks ' + scissors;
+							break;
+					}
+					break;
+				case 1:
+					switch(computerSelection) {
+						case 0:
+							playerScore++;
+							results = win + ' ' + paper + ' covers ' + rock;
+							break;
+						case 1:
+							results = 'Draw!';
+							break;
+						case 2:
+							computerScore++;
+							results = lose + ' ' + scissors + ' cut ' + paper;
+							break;
+					}
+					break;
+				case 2:
+					switch(computerSelection) {
+						case 0:
+							computerScore++;
+							results = lose + ' ' + rock + ' breaks ' + scissors;
+							break;
+						case 1:
+							playerScore++;
+							results = win + ' ' + scissors + ' cut ' + paper;
+							break;
+						case 2:
+							results = 'Draw!';
+							break;
+					}
+					break;
+			}
+			console.log(results);
+		}
+
+		function max(num1, num2) {
+			return (num1 > num2) ? num1 : num2;
+		}
+
+		function convertPlayerChoiceToNum(choice) {
+			if(choice.toLowerCase() === rock.toLowerCase()) {
+				console.log('Player chose ' + rock);
+				return 0;
+			}
+
+			if(choice.toLowerCase() === paper.toLowerCase()) {
+				console.log('Player chose ' + paper);
+				return 1;
+			} 
+
+			if(choice.toLowerCase() === scissors.toLowerCase()) {
+				console.log('Player chose ' + scissors);
+				return 2;
+			}
+			console.log("Error: Invalid Choice");
+			return -1;
+		}
+
+		function convertComputerChoiceToString(computerChoice) {
+			switch(computerChoice) {
+				case 0:
+					console.log('Computer chose ' + rock);
+					break;
+				case 1:
+					console.log('Computer chose ' + paper);
+					break;
+				case 2:
+					console.log('Computer chose ' + scissors);
+					break;
+			}
+		}
+
+		function printScore() {
+			console.log('Your Score : ' + playerScore + ' Computer Score : ' + computerScore);
+		}
+
+		function game() {
+			playerScore = computerScore = round = 0;
+			console.log('New Game! Best three out of five');
+
+			while(max(computerScore, playerScore) < 3) {
+				let computerChoice = computerPlay();
+				let playerChoice = -1;
+
+				console.log('*******************************');
+				console.log('Round : ' + ++round);
+
+				while(playerChoice < 0) {
+					playerChoice = convertPlayerChoiceToNum(prompt('Rock, Paper, Scissors'));
+				}
+
+				convertComputerChoiceToString(computerChoice);
+
+				playRPS(playerChoice, computerChoice);
+
+				printScore();
+			}
+
+			if(playerScore > 2) {
+				console.log('Game Over! You Win!!!!');
+			} else {
+				console.log('Game Over! You Lose Dude!');
+			}
+
+		}
+	</script>
+</body>
+</html>
