@@ -74,19 +74,21 @@
 		}
 
 		function convertPlayerChoiceToNum(choice) {
-			if(choice.toLowerCase() === rock.toLowerCase()) {
-				console.log('Player chose ' + rock);
-				return 0;
-			}
+			if(choice !== null) {
+				if(choice.toLowerCase() === rock.toLowerCase()) {
+					console.log('Player chose ' + rock);
+					return 0;
+				}
 
-			if(choice.toLowerCase() === paper.toLowerCase()) {
-				console.log('Player chose ' + paper);
-				return 1;
-			} 
+				if(choice.toLowerCase() === paper.toLowerCase()) {
+					console.log('Player chose ' + paper);
+					return 1;
+				} 
 
-			if(choice.toLowerCase() === scissors.toLowerCase()) {
-				console.log('Player chose ' + scissors);
-				return 2;
+				if(choice.toLowerCase() === scissors.toLowerCase()) {
+					console.log('Player chose ' + scissors);
+					return 2;
+				}
 			}
 			console.log("Error: Invalid Choice");
 			return -1;
