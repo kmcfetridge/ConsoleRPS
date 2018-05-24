@@ -1,9 +1,62 @@
+@font-face {
+	font-family: "Amatic";
+	src: url("../fonts/AmaticSC-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Indie Flower";
+	src: url("../fonts/IndieFlower.ttf");
+}
+
 body {
+	font-family: "Amatic", cursive;
 	margin: 0;
+}
+
+h1 {
+	margin: 0px;
+	padding: 0px
 }
 
 header {
 	text-align: center;
 	background-color: darkturquoise;
-	padding: 20px 0;
+	padding: 20px 0 10px 0;
+	font-family: "Indie Flower", cursive;
+}
+
+main {
+	text-align: center;
+	margin: 0 auto;
+}
+
+button {
+	font-size: 1.5em;
+	font-family: inherit;
+	font-weight: bold;
+	height: 100px;
+	width: 100px;
+}
+
+#score {
+	margin: 0 auto;
+	width: 304px;
+}
+
+.scr {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+#playerScoreBoard {
+	float: left;
+}
+
+#computerScoreBoard {
+	float: right;
+}
+
+#btnGroup {
+	clear: left;
+	clear: right;
 }

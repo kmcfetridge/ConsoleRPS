@@ -9,8 +9,40 @@
 		<header>
 			<h1>Rock - Paper - Scissors</h1>
 		</header>
+		<main>
+			<p>Score</p>
+			<div id="score">
+				<div id="playerScoreBoard" class="scr">Your Points : <span id="playerScore">0</span></div>
+				<div id="roundsPlayed" class="scr">Round : <span id="rounds">0</span></div>
+				<div id="computerScoreBoard" class="scr">Computer Points : <span id="computerScore">0</span></div>
+			</div>
+			<div id="btnGroup">
+				<button class="btn">ROCK</button>
+				<button class="btn">PAPER</button>
+				<button class="btn">SCISSORS</button>
+			</div>
+			<div id="events">
+				<div id="playerChoice" class="evn">example</div>
+				<div id="computerChoice" class="evn">example</div>
+			</div>
+		</main>
 	</div>
 	<script type="text/javascript">
+		function playRound(e) {
+			console.log('*******************************');
+			let playerChoice = convertPlayerChoiceToNum(e.target.innerHTML);
+			let computerChoice = computerPlay();
+			console.log('Round : ' + ++round);
+			convertComputerChoiceToString(computerChoice);
+			playRPS(playerChoice, computerChoice);
+			updateScore();
+		}
+
+		const btn = document.querySelectorAll(".btn");
+		btn.forEach(function(button) {
+			button.addEventListener("click", playRound);
+		}); 
+
 		let rock = 'Rock', paper = 'Paper', scissors = 'Scissors';
 		let win = 'You Win!', lose = 'You Lose!'
 		let playerScore = 0, computerScore = 0, round = 0;
@@ -114,8 +146,9 @@
 			}
 		}
 
-		function printScore() {
-			console.log('Your Score : ' + playerScore + ' Computer Score : ' + computerScore);
+		function updateScore() {
+			document.getElementById("playerScore").innerHTML = playerScore;
+			document.getElementById("computerScore").innerHTML = computerScore;
 		}
 
 		function game() {
