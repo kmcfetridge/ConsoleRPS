@@ -18,9 +18,13 @@
 				<div id="computerScoreBoard" class="scr">Computer Points : <span id="computerScore">0</span></div>
 			</div>
 			<div id="btnGroup">
-				<button class="btn">ROCK</button>
-				<button class="btn">PAPER</button>
-				<button class="btn">SCISSORS</button>
+				<button class="btn" disabled>ROCK</button>
+				<button class="btn" disabled>PAPER</button>
+				<button class="btn" disabled>SCISSORS</button>
+				<div id="messageBox">
+					<p id="message">First to five points is the winner</p>
+					<button id="reset">Start Game</button>
+				</div>
 			</div>
 			<div id="events">
 				<div id="playerChoice" class="evn"></div>
@@ -40,6 +44,9 @@
 		btn.forEach(function(button) {
 			button.addEventListener("click", playRound);
 		}); 
+
+		const begin = document.querySelector("#reset");
+		begin.addEventListener("click", reset);
 	</script>
 </body>
 </html>

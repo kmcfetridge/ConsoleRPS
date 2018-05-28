@@ -8,6 +8,14 @@
 	src: url("../fonts/IndieFlower.ttf");
 }
 
+@keyframes slideIn {
+  from {
+    margin-top: 50%;
+  } to {
+    margin-top: 0;
+  }
+}
+
 body {
 	font-family: "Amatic", cursive;
 	font-size: 20px;
@@ -20,10 +28,12 @@ h1 {
 }
 
 header {
+	position: relative;
 	text-align: center;
 	background-color: darkturquoise;
 	padding: 20px 0 10px 0;
 	font-family: "Indie Flower", cursive;
+	z-index: 2;
 }
 
 main {
@@ -31,7 +41,7 @@ main {
 	margin: 0 auto;
 }
 
-button {
+.btn {
 	font-size: 1.5em;
 	font-family: inherit;
 	font-weight: bold;
@@ -41,28 +51,61 @@ button {
 
 #score, #events {
 	margin: 0 auto;
-	width: 454px;
+	width: 456px;
 }
 
 .scr {
 	display: inline-block;
 	margin-bottom: 5px;
+	width: 150px;
 }
 
 .evn {
 	display: inline-block;
 	margin-top: 5px;
+	width: 225px;
 }
 
 #playerScoreBoard, #playerChoice {
-	float: left;
+	text-align: left;
 }
 
 #computerScoreBoard, #computerChoice {
-	float: right;
+	text-align: right;
 }
 
 #btnGroup, #results {
-	clear: left;
-	clear: right;
+	margin: 0 auto;
+	width: 456px;
+}
+
+#btnGroup {
+	height: 150px;
+}
+
+#messageBox {
+	background-color: darkturquoise;
+	width: 456px;
+	height: 150px;
+	margin: 0 auto;
+	font-size: 1.5em;
+	position: relative;
+	top: -150px;
+}
+
+#messageBox p {
+	margin: 0px;
+}
+
+#message {
+	padding: 20px 0 0 0;
+}
+
+#reset {
+	margin: 30px 0 0 0;
+	height: 50px;
+	width: 150px;
+	font-family: inherit;
+	font-weight: bold;
+	font-size: 1em;
 }
