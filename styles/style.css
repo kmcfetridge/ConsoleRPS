@@ -8,7 +8,7 @@
 	src: url("../fonts/IndieFlower.ttf");
 }
 
-@keyframes slideIn {
+@keyframes messageBoxAnimation {
   from {
     margin-top: 50%;
   } to {
@@ -49,7 +49,7 @@ main {
 	width: 150px;
 }
 
-#score, #events {
+#scoreBoard, #events {
 	margin: 0 auto;
 	width: 456px;
 }

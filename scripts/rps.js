@@ -136,7 +136,7 @@ function reset(e) {
 	document.getElementById("computerChoice").innerHTML = "";
 	document.getElementById("playerChoice").innerHTML = "";
 	document.getElementById("resultsDisplay").innerHTML = "";
-	document.getElementById("messageBox").style.animation = "slideIn 0.5s ease-out";
+	document.getElementById("messageBox").style.animation = "messageBoxAnimation 0.5s ease-out";
 	toggleMessageBox();
 	toggleButtons(false);
 }
