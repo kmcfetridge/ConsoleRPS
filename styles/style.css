@@ -10,6 +10,7 @@
 
 body {
 	font-family: "Amatic", cursive;
+	font-size: 20px;
 	margin: 0;
 }
 
@@ -34,13 +35,13 @@ button {
 	font-size: 1.5em;
 	font-family: inherit;
 	font-weight: bold;
-	height: 100px;
-	width: 100px;
+	height: 150px;
+	width: 150px;
 }
 
-#score {
+#score, #events {
 	margin: 0 auto;
-	width: 304px;
+	width: 454px;
 }
 
 .scr {
@@ -48,15 +49,20 @@ button {
 	margin-bottom: 5px;
 }
 
-#playerScoreBoard {
+.evn {
+	display: inline-block;
+	margin-top: 5px;
+}
+
+#playerScoreBoard, #playerChoice {
 	float: left;
 }
 
-#computerScoreBoard {
+#computerScoreBoard, #computerChoice {
 	float: right;
 }
 
-#btnGroup {
+#btnGroup, #results {
 	clear: left;
 	clear: right;
 }
