@@ -20,6 +20,8 @@ function computerPlay() {
 
 function playRPS(playerSelection, computerSelection ) {
 	let results = "";
+	let boldStart = "<span class='bold'>";
+	let boldEnd = "</span>";
 	round++;
 	switch(playerSelection) {
 		case 0:
@@ -29,11 +31,11 @@ function playRPS(playerSelection, computerSelection ) {
 					break;
 				case 1:
 					computerScore++;
-					results = lose + ' ' + paper + ' covers ' + rock;
+					results = lose + ' ' + boldStart + paper + boldEnd + ' covers ' + boldStart + rock + boldEnd;
 					break;
 				case 2:
 					playerScore++;
-					results = win + ' ' + rock + ' breaks ' + scissors;
+					results = win + ' ' + boldStart + rock + boldEnd + ' breaks ' + boldStart + scissors + boldEnd;
 					break;
 			}
 			break;
@@ -41,14 +43,14 @@ function playRPS(playerSelection, computerSelection ) {
 			switch(computerSelection) {
 				case 0:
 					playerScore++;
-					results = win + ' ' + paper + ' covers ' + rock;
+					results = win + ' ' + boldStart + paper + boldEnd + ' covers ' + boldStart + rock + boldEnd;
 					break;
 				case 1:
 					results = 'Draw!';
 					break;
 				case 2:
 					computerScore++;
-					results = lose + ' ' + scissors + ' cut ' + paper;
+					results = lose + ' ' + boldStart + scissors + boldEnd + ' cut ' + boldStart + paper + boldEnd;
 					break;
 			}
 			break;
@@ -56,11 +58,11 @@ function playRPS(playerSelection, computerSelection ) {
 			switch(computerSelection) {
 				case 0:
 					computerScore++;
-					results = lose + ' ' + rock + ' breaks ' + scissors;
+					results = lose + ' ' + boldStart + rock + boldEnd + ' breaks ' + boldStart + scissors + boldEnd;
 					break;
 				case 1:
 					playerScore++;
-					results = win + ' ' + scissors + ' cut ' + paper;
+					results = win + ' ' + boldStart + scissors + boldEnd + ' cut ' + boldStart + paper + boldEnd;
 					break;
 				case 2:
 					results = 'Draw!';
@@ -76,7 +78,7 @@ function max(num1, num2) {
 }
 
 function convertPlayerChoiceToNum(choice) {
-		document.getElementById("playerChoice").innerHTML = 'Player chose <strong>' + choice + '</strong>';
+		document.getElementById("playerChoice").innerHTML = 'Player chose <span class="bold">' + choice + '</span>';
 		return (choice.toLowerCase() === rock.toLowerCase()) ? 0 : 
 		(choice.toLowerCase() === paper.toLowerCase()) ? 1 : 2;
 }
@@ -84,13 +86,13 @@ function convertPlayerChoiceToNum(choice) {
 function convertComputerChoiceToString(computerChoice) {
 	switch(computerChoice) {
 		case 0:
-			document.getElementById("computerChoice").innerHTML = 'Computer chose <strong>' + rock + '</strong>';
+			document.getElementById("computerChoice").innerHTML = 'Computer chose <span class="bold">' + rock + '</span>';
 			break;
 		case 1:
-			document.getElementById("computerChoice").innerHTML = 'Computer chose <strong>' + paper + '</strong>';
+			document.getElementById("computerChoice").innerHTML = 'Computer chose <span class="bold">' + paper + '</span>';
 			break;
 		case 2:
-			document.getElementById("computerChoice").innerHTML = 'Computer chose <strong>' + scissors + '</strong>';
+			document.getElementById("computerChoice").innerHTML = 'Computer chose <span class="bold">' + scissors + '</span>';
 			break;
 	}
 }

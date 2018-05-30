@@ -13,9 +13,9 @@
 		<main>
 			<p>Score</p>
 			<div id="scoreBoard">
-				<div id="playerScoreBoard" class="scr">Your Points : <span id="playerScore">0</span></div>
-				<div id="roundsPlayed" class="scr">Round : <span id="rounds">0</span></div>
-				<div id="computerScoreBoard" class="scr">Computer Points : <span id="computerScore">0</span></div>
+				<div id="playerScoreBoard" class="scr">Your Points : <span id="playerScore" class="bold">0</span></div><!--
+				--><div id="roundsPlayed" class="scr">Round : <span id="rounds" class="bold">0</span></div><!--
+				--><div id="computerScoreBoard" class="scr">Computer Points : <span id="computerScore" class="bold">0</span></div>
 			</div>
 			<div id="btnGroup">
 				<button class="btn" disabled>ROCK</button><!--
@@ -27,8 +27,8 @@
 				</div>
 			</div>
 			<div id="events">
-				<div id="playerChoice" class="evn"></div>
-				<div id="computerChoice" class="evn"></div>
+				<div id="playerChoice" class="evn"></div><!--
+				--><div id="computerChoice" class="evn"></div>
 			</div>
 			<div id="results">
 				<div id="resultsDisplay"></div>
@@ -38,11 +38,11 @@
 	<script type="text/javascript">
 		let rock = 'ROCK', paper = 'PAPER', scissors = 'SCISSORS';
 		let win = 'You Win!', lose = 'You Lose!'
-		let playerScore = 0, computerScore = 0, round = 0;
+		var playerScore = 0, computerScore = 0, round = 0;
 
-		const btn = document.querySelectorAll(".btn");
-		btn.forEach(function(button) {
-			button.addEventListener("click", playRound);
+		const btns = document.querySelectorAll(".btn");
+		btns.forEach(function(aButton) {
+			aButton.addEventListener("click", playRound);
 		}); 
 
 		const begin = document.querySelector("#reset");
