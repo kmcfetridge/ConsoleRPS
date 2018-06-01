@@ -41,9 +41,13 @@
 		var playerScore = 0, computerScore = 0, round = 0;
 
 		const btns = document.querySelectorAll(".btn");
-		btns.forEach(function(aButton) {
+		for(let i = 0;i<btns.length;i++) {
+			btns[i].addEventListener("click", playRound);
+		}
+
+		/*btns.forEach(function(aButton) {
 			aButton.addEventListener("click", playRound);
-		}); 
+		});*/ 
 
 		const begin = document.querySelector("#reset");
 		begin.addEventListener("click", reset);
