@@ -1,3 +1,3 @@
-Rock, Paper, Scissors in console.
+Rock, Paper, Scissors
 
-Right click, inspect. Go to console. To start -  type game(); - in console.
+https://kmcfetridge.github.io/ConsoleRPS/
